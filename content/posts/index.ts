@@ -20,6 +20,7 @@ export type Post = {
 
 // scripts:import-marker
 import * as pChatNoMayscreen from "./chat-no-mayscreen";
+import * as pModeracaoDoChatNoMayscreen from "./moderacao-do-chat-no-mayscreen";
 import * as pMayscreen from "./mayscreen";
 import * as pDeployDeProjetosNaCloudflareOuVercel from "./deploy-de-projetos-na-cloudflare-ou-vercel";
 import * as olaMundo from "./ola-mundo";
@@ -28,6 +29,7 @@ import * as guiaDeTagsSemanticas from "./guia-de-tags-semanticas";
 
 const registry: Post[] = [
   // scripts:entry-marker
+  { meta: pModeracaoDoChatNoMayscreen.meta, Content: pModeracaoDoChatNoMayscreen.default },
   { meta: pChatNoMayscreen.meta, Content: pChatNoMayscreen.default },
   { meta: pMayscreen.meta, Content: pMayscreen.default },
   { meta: pDeployDeProjetosNaCloudflareOuVercel.meta, Content: pDeployDeProjetosNaCloudflareOuVercel.default },
