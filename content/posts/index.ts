@@ -19,6 +19,7 @@ export type Post = {
 };
 
 // scripts:import-marker
+import * as pMayscreen from "./mayscreen";
 import * as pDeployDeProjetosNaCloudflareOuVercel from "./deploy-de-projetos-na-cloudflare-ou-vercel";
 import * as olaMundo from "./ola-mundo";
 import * as esteBlog from "./este-blog";
@@ -26,6 +27,7 @@ import * as guiaDeTagsSemanticas from "./guia-de-tags-semanticas";
 
 const registry: Post[] = [
   // scripts:entry-marker
+  { meta: pMayscreen.meta, Content: pMayscreen.default },
   { meta: pDeployDeProjetosNaCloudflareOuVercel.meta, Content: pDeployDeProjetosNaCloudflareOuVercel.default },
   { meta: olaMundo.meta, Content: olaMundo.default },
   { meta: esteBlog.meta, Content: esteBlog.default },
