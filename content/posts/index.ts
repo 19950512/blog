@@ -34,8 +34,9 @@ const registry: Post[] = [
   { meta: guiaDeTagsSemanticas.meta, Content: guiaDeTagsSemanticas.default },
 ];
 
+// invariant: posts do mesmo dia mantêm a ordem do registro, onde scripts/new-post.mjs põe o mais novo no topo.
 export const posts: Post[] = [...registry].sort((a, b) =>
-  a.meta.date < b.meta.date ? 1 : -1
+  a.meta.date < b.meta.date ? 1 : a.meta.date > b.meta.date ? -1 : 0
 );
 
 export function getPostBySlug(slug: string): Post | undefined {
